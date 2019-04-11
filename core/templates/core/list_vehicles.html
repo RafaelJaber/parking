@@ -1,0 +1,14 @@
+<h1>Lista Veículos</h1>
+
+{% for vehicle in vehicles %}
+    <li>{{vehicle.board}}
+{% endfor %}
+
+<form action="{% url 'core_vehicles_register' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+  <button type="submit">Cadastrar</button>
+</form>

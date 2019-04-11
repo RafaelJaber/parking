@@ -1,0 +1,17 @@
+<h1>Lista Pessoas</h1>
+
+
+{% for person in persons %}
+
+    <li>{{person.name}}</li>
+
+{% endfor %}
+
+<form action="{% url 'core_person_register' %}" method="POST">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+
+  <button type="submit">Cadastrar</button>
+</form>
